@@ -10,5 +10,5 @@ class Post < ApplicationRecord
                                     :content_type => /\Aimage\/.*\Z/
 
   belongs_to :user
-
+  has_many :comments, dependent: :destroy
 end
