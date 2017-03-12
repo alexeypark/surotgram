@@ -11,10 +11,23 @@
       </div>
     </div>
     <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-left">
+        <li class="img-circle">
+          <%= link_to profile_avatar_select_small(current_user), profile_path(current_user.user_name) %>
+        </li>
+
+      </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
             <li>
-              <%= link_to "New Post", new_post_path %>
+              <%= link_to new_post_path do %>
+                  <i class="glyphicon glyphicon-plus"></i>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to browse_posts_path do %>
+                  <i class="glyphicon glyphicon-plane"></i>
+              <% end %>
             </li>
             <li>
               <%= link_to "Logout", destroy_user_session_path, method: :delete %>

@@ -21,4 +21,13 @@ module ApplicationHelper
     image_tag 'default-avatar.jpg', size: "162x162", id: 'image-preview',
               class: 'img-responsive img-circle profile-image'
   end
+
+  def profile_avatar_select_small(user)
+    return image_tag user.avatar.url,
+                     size: "30x30",
+                     id: 'image-preview',
+                     class: 'img-circle' if user.avatar.exists?
+    image_tag 'default-avatar.jpg', size: "30x30", id: 'image-preview',
+              class: 'img-circle'
+  end
 end
