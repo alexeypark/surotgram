@@ -130,10 +130,12 @@ html {
 .follow-button {
   text-transform: uppercase;
   border-color: #4090db;
+  background-color: white;
   color: #4090db;
-  margin-left: 20px;
+  margin-top: 10px;
   &:visited, &:focus, &:hover {
     border-color: #2D6396;
+    background-color: ghostwhite;
     color: #2D6396;
   }
 }
@@ -143,7 +145,7 @@ html {
   border-color: #66bd2b;
   background-color: #66bd2b;
   color: white;
-  margin-left: 20px;
+  margin-top: 10px;
   &:visited, &:focus, &:hover {
     border-color: #47821F;
     background-color: #47821F;
