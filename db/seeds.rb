@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create([{ user_name: 'alexey', email: 'alexey@mail.com', password: 'password', avatar: Faker::Avatar.image }])
+User.create([{ user_name: 'alexey', email: 'alexey@mail.com', password: 'password', avatar: File.open(File.join(Rails.root, 'avatar', 'avatar.jpg')) }])
 50.times do
   User.create([{ user_name: Faker::Internet.user_name, email: Faker::Internet.free_email, password: 'password'}])
 end
@@ -20,4 +20,7 @@ followers.each { |follower| follower.follow(user) }
 
 20.times do
   Post.create([{caption: Faker::Lorem.sentence(4), image: File.open(Dir.glob(File.join(Rails.root, 'sampleimages', '*')).sample), user_id: following.sample.id }])
+  Post.create([{caption: Faker::Lorem.sentence(4), image: File.open(Dir.glob(File.join(Rails.root, 'sampleimages', '*')).sample), user_id: user.id }])
 end
+
+following.each { |followed| Post.all.sample.liked_by followed }
