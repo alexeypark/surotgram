@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  paginates_per 5
   validates :image, presence: true
   validates :user_id, presence: true
 

@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_attached_file :avatar, styles: { medium: '152x152#' }
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
-  validates :user_name, presence: true, length: { minimum: 4, maximum: 16 }
+  validates :user_name, presence: true, length: { minimum: 4, maximum: 16 }, format: { without: /\s/ }
 
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy

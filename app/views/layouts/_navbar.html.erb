@@ -12,10 +12,11 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-left">
-        <li class="img-circle">
-          <%= link_to profile_avatar_select_small(current_user), profile_path(current_user.user_name) %>
-        </li>
-
+        <% if user_signed_in? %>
+          <li class="img-circle">
+            <%= link_to profile_avatar_select_small(current_user), profile_path(current_user.user_name) %>
+          </li>
+        <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
