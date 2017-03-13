@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  acts_as_votable
   paginates_per 5
   validates :image, presence: true
   validates :user_id, presence: true
