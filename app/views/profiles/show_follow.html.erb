@@ -6,5 +6,9 @@
             <% @users.each do |user| %>
                 <%= render 'profile', user: user %>
             <% end %>
+          <div class="text-center" id="paginator">
+            <%= link_to_previous_page @users, 'PREVIOUS', id: 'load_more' %>
+            <%= link_to_next_page @users, 'NEXT', id: 'load_more' %>
+          </div>
       <% end %>
     </section>
