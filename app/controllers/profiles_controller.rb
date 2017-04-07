@@ -51,3 +51,5 @@ class ProfilesController < ApplicationController
     end
   end
 end
+
+#TODO what to do
